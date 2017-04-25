@@ -4,7 +4,7 @@
             <view>
                 <label>
                     <span>开始时间<span class="tip">*</span>：</span>
-                    <picker mode="date"   bindchange="eduStartTimeChange" fields="month" >
+                    <picker mode="date"   bindchange="eduStartTimeChange" fields="month" start="2000-01">
                         <view class="picker">
                             {{startTime}}
                         </view>
@@ -12,7 +12,7 @@
                 </label>
                 <label>
                     <span>结束时间<span class="tip">*</span>：</span>
-                    <picker mode="date"   bindchange="eduEndTimeChange" fields="month" >
+                    <picker mode="date"   bindchange="eduEndTimeChange" fields="month" start="2000-01">
                         <view class="picker">
                             {{endTime}}
                         </view>
@@ -21,7 +21,7 @@
 
                 <label>
                     <span> 学校<span class="tip">*</span>：</span>
-                    <input  type="text" name="school" bindchange=""/>
+                    <input  type="text" name="school" value="{{ school }}"/>
                 </label>
 
                 <label>
@@ -35,7 +35,7 @@
 
                 <label>
                     <span> 专业<span class="tip">*</span>：</span>
-                    <input  type="text" name="major" />
+                    <input  type="text" name="major" value="{{ major }}"/>
                 </label>
             </view>
             <view>

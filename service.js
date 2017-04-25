@@ -32,4 +32,5 @@ var tip = {
         }
     }
 };
+
 module.exports.tip = tip;

@@ -9,7 +9,22 @@ Page({
         that.setData({
             resume_id:options.id,
             index:options.index
-        })
+        });
+        if (options.type=='edit'){
+            that.setData({
+                type:'edit'
+            });
+            app.request('resume').get(options.id,function (res) {
+                that.setData({
+                    startTime:res.exp[options.index].startTime,
+                    endTime:res.exp[options.index].endTime,
+                    company:res.exp[options.index].company,
+                    position:res.exp[options.index].position,
+                    detail:res.exp[options.index].detail
+                });
+                console.log(that.data)
+            })
+        }
     },
     workStartTimeChange:function (e) {
         var that=this;

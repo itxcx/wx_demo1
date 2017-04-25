@@ -8,16 +8,17 @@ label{
     flex-flow: row nowrap;
     justify-content:space-between;
     margin: 0.4rem;
-    height: 2rem;
-    line-height: 2rem;
+    height: 3rem;
+    line-height: 3rem;
     border-bottom: 1px solid gainsboro;
     padding: 0 1rem;
+    font-size:14px;
 }
 label input{
-    width: 65%;
+    width: 75%;
     /*padding: 0 0 0 0.5rem;*/
-     height: 2rem;
-    line-height: 2rem;
+     height: 3rem;
+    line-height: 3rem;
     border: none!important;
     
 }

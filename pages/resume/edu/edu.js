@@ -11,7 +11,30 @@ Page({
         that.setData({
             resume_id:options.id,
             index:options.index
-        })
+        });
+        if (options.type=='edit'){
+            that.setData({
+                type:'edit'
+            });
+            app.request('resume').get(options.id,function (res) {
+                function degreeMap() {
+                    for (var i in that.data.degrees){
+                        if (that.data.degrees[i]==res.edu[options.index].degree){
+                            return i;
+                        }
+                    }
+                }
+                that.setData({
+                    startTime:res.edu[options.index].startTime,
+                    endTime:res.edu[options.index].endTime,
+                    degree:degreeMap(),
+                    school:res.edu[options.index].school,
+                    major:res.edu[options.index].major
+                });
+                console.log(that.data)
+            })
+        }
+
     },
     eduStartTimeChange:function (e) {
         var that=this;
@@ -38,7 +61,6 @@ Page({
             startTime:that.data.startTime,
             endTime:that.data.endTime,
             degree:that.data.degrees[that.data.degree],
-            eduStartTime:that.data.eduStartTime,
             school:e.detail.value.school,
             major:e.detail.value.major
         };

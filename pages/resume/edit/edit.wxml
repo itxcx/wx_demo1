@@ -14,18 +14,18 @@
         </view>
         <view class="info">
             <view class="flex">
-                <view class="col-50">姓名:{{ resume.info.name }}</view>
-                <view class="col-50">性别:{{ resume.info.gender }}</view>
+                <view class="col-50">姓名: {{ resume.info.name }}</view>
+                <view class="col-50">性别: {{ infoGender }}</view>
             </view>
             <view class="flex">
-                <view class="col-50">手机:{{ resume.info.mobile }}</view>
-                <view class="col-50">工作经验:{{ resume.info.work_exp }}</view>
+                <view class="col-50">手机: {{ resume.info.mobile }}</view>
+                <view class="col-50">工作经验: {{ resume.info.work_exp }}</view>
             </view>
             <view class="flex">
-                <view class="col-50">年龄:{{ resume.info.age }}</view>
+                <view class="col-50">年龄: {{ resume.info.age }}</view>
             </view>
             <view class="flex">
-                <view class="col-50">邮箱:{{resume.info.email}}</view>
+                <view class="col-50">邮箱: {{resume.info.email}}</view>
             </view>
         </view>
     </view>
@@ -36,18 +36,24 @@
             <span class="nav" bindtap="addEdu">添加</span>
         </view>
         <view class="info" wx:for="{{resume.edu}}" wx:if="{{ resume.edu.length>0 }}">
-            <view class="infoTitle">{{item.school}}</view>
-            <view class="flex">
-                开始时间:{{ item.startTime }}
+            <view class="infoTitle">
+                <view>{{item.school}}</view>
+                <view class="btns">
+                    <span bindtap="eduDelete" data-index="{{index}}">删除</span>
+                    <span bindtap="eduEdit" data-index="{{ index }}">编辑</span>
+                </view>
             </view>
             <view class="flex">
-                结束时间:{{ item.endTime }}
+                开始时间: {{ item.startTime }}
             </view>
             <view class="flex">
-                学历:{{ item.degree }}
+                结束时间: {{ item.endTime }}
             </view>
             <view class="flex">
-                专业:{{ item.major }}
+                学历: {{ item.degree }}
+            </view>
+            <view class="flex">
+                专业: {{ item.major }}
             </view>
         </view>
         <view wx:if="{{ resume.edu.length==0 }}" class="noInfo">
@@ -60,19 +66,26 @@
             <span>工作经历</span>
             <span class="nav" bindtap="addWork">添加</span>
         </view>
+
         <view class="info" wx:for="{{ resume.exp }}" wx:if="{{ resume.exp.length>0 }}">
-            <view class="infoTitle">{{ item.company }}</view>
-            <view class="flex">
-                开始时间:{{ item.startTime }}
+            <view class="infoTitle">
+                <view>{{ item.company }}</view>
+                <view class="btns">
+                    <span bindtap="expDelete" data-index="{{index}}">删除</span>
+                    <span bindtap="expEdit" data-index="{{ index }}">编辑</span>
+                </view>
             </view>
             <view class="flex">
-                结束时间:{{ item.endTime }}
+                开始时间: {{ item.startTime }}
             </view>
             <view class="flex">
-                职位:{{item.position}}
+                结束时间: {{ item.endTime }}
             </view>
             <view class="flex">
-                工作描述:{{ item.detail }}
+                职位: {{item.position}}
+            </view>
+            <view class="flex">
+                工作描述: {{ item.detail }}
             </view>
         </view>
         <view wx:if="{{ resume.exp.length==0 }}" class="noInfo">
@@ -80,7 +93,9 @@
         </view>
     </view>
 
-
+    <view class="confirm">
+        <button class="btn-block" type="primary" bindtap="confirm">确定</button>
+    </view>
 
 
 </view>

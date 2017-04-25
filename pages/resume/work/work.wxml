@@ -21,18 +21,18 @@
 
                 <label>
                     <span> 公司<span class="tip">*</span>：</span>
-                    <input  type="text" name="company" bindchange=""/>
+                    <input  type="text" name="company" value="{{ company }}"/>
                 </label>
 
 
                 <label>
                     <span> 所任职位<span class="tip">*</span>：</span>
-                    <input  type="text" name="position" />
+                    <input  type="text" name="position" value="{{ position }}"/>
                 </label>
 
                 <view class="textArea">
-                    <view> 工作描述<span class="tip">*</span>：</view>
-                    <textarea bindblur="bindTextAreaBlur" auto-height  name="detail" class="posdetail"/>
+                    <view class="textAreaTitle"> 工作描述<span class="tip">*</span>：</view>
+                    <textarea bindblur="bindTextAreaBlur" auto-height  name="detail" class="posdetail" value="{{ detail }}"/>
                 </view>
             </view>
             <view>
