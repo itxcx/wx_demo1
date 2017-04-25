@@ -1,0 +1,16 @@
+<view class="resumeAdd">
+    <view class="tip">
+        为保证成功导入简历，请先核对并更新您在相应网站的简历
+    </view>
+    <view class="list">
+        <view class="list-item" wx:for="{{webs}}" bindtap="import" data-web="{{item}}">
+            <image src="../../../{{item.info.img}}" class="logo"></image>
+                导入{{item.info.label}}简历
+            <image src="../../../images/go.png" class="go"></image>
+        </view>
+    </view>
+    <view class="btns">
+        <button class="btn-block" type="primary" bindtap="create">创建新简历</button>
+    </view>
+
+</view>

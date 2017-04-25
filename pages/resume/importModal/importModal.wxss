@@ -1,0 +1,17 @@
+/* pages/resume/importModal.wxss */
+
+.title{
+    padding: 1rem;
+    font-weight: bold;
+}
+input{
+    border: 1px solid gainsboro;
+    padding: 0.5rem;
+}
+label{
+    display: block;
+    padding: 0.5rem 1rem;
+}
+.btns{
+    padding: 0.5rem 0;
+}

@@ -1,0 +1,86 @@
+<view class="edit">
+
+    <view class="section">
+        <view class="flex">
+            <span class="words">简历完整度:</span>
+            <progress percent="{{resume.integrity}}" show-info  class="progress"/>
+        </view>
+    </view>
+
+    <view class="section">
+        <view class="title">
+            <span>基本信息</span>
+            <span class="nav" bindtap="editInfo">编辑</span>
+        </view>
+        <view class="info">
+            <view class="flex">
+                <view class="col-50">姓名:{{ resume.info.name }}</view>
+                <view class="col-50">性别:{{ resume.info.gender }}</view>
+            </view>
+            <view class="flex">
+                <view class="col-50">手机:{{ resume.info.mobile }}</view>
+                <view class="col-50">工作经验:{{ resume.info.work_exp }}</view>
+            </view>
+            <view class="flex">
+                <view class="col-50">年龄:{{ resume.info.age }}</view>
+            </view>
+            <view class="flex">
+                <view class="col-50">邮箱:{{resume.info.email}}</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="section">
+        <view class="title">
+            <span>教育经历</span>
+            <span class="nav" bindtap="addEdu">添加</span>
+        </view>
+        <view class="info" wx:for="{{resume.edu}}" wx:if="{{ resume.edu.length>0 }}">
+            <view class="infoTitle">{{item.school}}</view>
+            <view class="flex">
+                开始时间:{{ item.startTime }}
+            </view>
+            <view class="flex">
+                结束时间:{{ item.endTime }}
+            </view>
+            <view class="flex">
+                学历:{{ item.degree }}
+            </view>
+            <view class="flex">
+                专业:{{ item.major }}
+            </view>
+        </view>
+        <view wx:if="{{ resume.edu.length==0 }}" class="noInfo">
+            暂无教育经历！
+        </view>
+    </view>
+
+    <view class="section">
+        <view class="title">
+            <span>工作经历</span>
+            <span class="nav" bindtap="addWork">添加</span>
+        </view>
+        <view class="info" wx:for="{{ resume.exp }}" wx:if="{{ resume.exp.length>0 }}">
+            <view class="infoTitle">{{ item.company }}</view>
+            <view class="flex">
+                开始时间:{{ item.startTime }}
+            </view>
+            <view class="flex">
+                结束时间:{{ item.endTime }}
+            </view>
+            <view class="flex">
+                职位:{{item.position}}
+            </view>
+            <view class="flex">
+                工作描述:{{ item.detail }}
+            </view>
+        </view>
+        <view wx:if="{{ resume.exp.length==0 }}" class="noInfo">
+            暂无工作经历！
+        </view>
+    </view>
+
+
+
+
+</view>

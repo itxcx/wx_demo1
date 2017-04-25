@@ -1,0 +1,26 @@
+<!--pages/posDetail/detail.wxml-->
+<!--<import src="../../template/jd.wxml"/>-->
+<import src="../../wxParse/wxParse.wxml"/>
+
+     
+<scroll-view class="posDetail" scroll-y="true">
+    <view class="title">
+       {{pos.name}}
+    </view>
+    <view class="info">
+        <view class="item">
+            工作地区：{{pos.city_str}}
+        </view>
+         <view class="item">
+            招聘人数：{{pos.hiring_count}}
+        </view>
+    </view>
+    <view id="jd">
+        <view class="wxParse">
+            <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+        </view>
+    </view>
+</scroll-view>
+<view class="applyBtn">
+    <button type="primary" bindtap="apply">申请职位</button>
+</view>

@@ -1,0 +1,48 @@
+{
+  "pages": [
+
+
+    "pages/index/index",
+    "pages/posList/social",
+    "pages/posList/campus",
+    "pages/posDetail/detail",
+    "pages/resume/index/index",
+    "pages/resume/add/add",
+    "pages/resume/create/create",
+    "pages/resume/edit/edit",
+    "pages/resume/edu/edu",
+    "pages/resume/work/work",
+    "pages/resume/importModal/importModal",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "微信招聘",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "selectedColor": "#069",
+    "list": [
+      {
+        "pagePath": "pages/posList/social",
+        "text": "社会招聘",
+        "iconPath": "images/social.png",
+        "selectedIconPath": "images/social_select.png"
+      },
+      {
+        "pagePath": "pages/posList/campus",
+        "text": "校园招聘",
+        "iconPath": "images/campus.png",
+        "selectedIconPath": "images/campus_select.png"
+      }
+    ]
+  },
+  "debug": true,
+  "networkTimeout": {
+    "request": 60000,
+    "connectSocket": 60000,
+    "uploadFile": 60000,
+    "downloadFile": 60000
+  }
+}

@@ -1,0 +1,7 @@
+/**
+ * Created by Administrator on 2017/3/28.
+ */
+//当大版本号改变时，此处列表可以清空掉
+var changeVersion={
+
+};

@@ -1,0 +1,53 @@
+/**index.wxss**/
+.banner{
+  width: 100%;
+
+}
+.search{
+  width: 650rpx;
+  margin: 0.5rem auto;
+  background: #fff;
+  border: 1px solid gainsboro;
+  height: 1rem;
+  padding: 0.5rem;
+font-size: 0.8rem;
+}
+
+.item{
+  height: 50px;
+  background: #fff;
+  margin-top: 2px;
+  font-size: 0.8rem;
+  padding: 0.5rem 0;
+}
+.gotip{
+  width:0.8rem;
+  height: 0.8rem
+}
+.item-left{
+  width: 80%;
+  float: left;
+  margin-left: 1rem;
+  line-height: 1.5rem;
+}
+.item-right{
+  text-align: right;
+  float: right;
+  margin-right: 1rem;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.posdes{
+  width: 100%;
+  color: #999;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.posName{
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

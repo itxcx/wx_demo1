@@ -1,0 +1,19 @@
+<!--pages/resume/importModal.wxml-->
+<import src="../../../template/tip.wxml" />
+<view class="loginModal">
+    <view class="title">导入{{label}}简历</view>
+    <view class="form">
+        <form bindsubmit="submit">
+            <label>
+                <input  type="text" name="userName" placeholder="用户名"/>
+            </label>
+              <label>
+                <input  type="password" name="password" placeholder="密码"/>
+            </label>
+            <view class="btns">
+                <button class="btn-block" type="primary" form-type="submit">确认授权</button>
+            </view>
+        </form>
+    </view>
+</view>
+<template is="tip" data="{{tip}}" wx:if="{{tipShow}}"></template>

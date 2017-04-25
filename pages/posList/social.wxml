@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="container">
+  <view>
+    <image src="../../images/banner.jpg" class="banner" mode="widthFix"></image>
+  </view>
+  <view>
+    <input placeholder="请输入职位名称关键字" class="search" bindinput="searchList"/>
+</view>
+<view class="posList">
+    <navigator url="../posDetail/detail?id={{item.id}}" wx:for="{{positions}}" class="item" open-type="navigate">
+        <view class="item-left">
+          <view class="posName"> {{item.name}}</view>
+          <view class="posdes"> 
+            [{{item.city_str}}]  {{item.department.name}}<span wx:if="{{item.category}}">/{{item.category.name}}</span>
+          </view>
+        </view>
+        <view class="item-right"><image src="../../images/go.png" class="gotip"></image></view>
+    </navigator>
+</view>
+</view>
+<view></view>
+

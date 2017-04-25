@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://www.hrtell.com/rc/admin/index.html#/position/new -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    
+    <title ng-bind="title" class="ng-binding">职位发布</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="icon" href="http://www.hrtell.com/rc/admin/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="./职位发布_files/bootstrap.css">
+    <link rel="stylesheet" href="./职位发布_files/umeditor.min.css">
+    <link rel="stylesheet" href="./职位发布_files/default.css">
+    <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">-->
+    <link rel="stylesheet" href="./职位发布_files/select.css">
+    <link rel="stylesheet" href="./职位发布_files/main.css">
+
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="scripts/main.min.js?t=1491531579610" src="./职位发布_files/main.min.js.下载"></script><link href="./职位发布_files/default(1).css" rel="stylesheet"></head>
+<body ng-controller="appCtrl" style="" class="ng-scope">
+<!--[if lte IE 8]>
+<div class="alert alert-warning alert-dismissible fade in" role="alert">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
+    </button>
+    您的ie浏览器版本过低,请升级ie浏览器,或使用chrome、firefox、safari、opera浏览此网页。
+</div>
+<![endif]-->
+
+<!-- ngIf: vm.alerts.length -->
+<!-- ngIf: user --><div class="wrap ng-scope" ng-if="user" ng-show="user">
+    <!-- ngInclude: undefined --><ng-include src="&#39;views/com/nav.html&#39;" class="ng-scope"><!--nav-->
+<div class="sidebar ng-scope">
+    <div class="logo-con">
+        <img style="width:120px;text-align: center" ng-src="/resources/rc/logo_1.jpg" alt="" src="./职位发布_files/logo_1.jpg">
+    </div>
+
+    <!--君度公司只保留职位列表选项-->
+    <!-- ngIf: user.role=='ML' -->
+
+    <!-- ngIf: user.role!='ML' --><ul class="side-nav ng-scope" ng-if="user.role!=&#39;ML&#39;">
+        <li ng-class=" {active:page ==&#39;pos_list&#39;}" class=""><a ng-href="#/position/list?from=nav" href="http://www.hrtell.com/rc/admin/index.html#/position/list?from=nav"><span class="glyphicon glyphicon-list icon"></span>职位列表</a></li>
+        <li ng-class=" {active:page ==&#39;pos_new&#39;}" ng-hide="(user.role==&#39;ML&#39;)||(user.role==&#39;RALL&#39;)" class="active"><a ng-href="#/position/new" href="http://www.hrtell.com/rc/admin/index.html#/position/new"><span class="glyphicon glyphicon-open icon"></span>职位发布</a></li>
+        <li ng-class=" {active:page ==&#39;resume_new&#39;}"><a ng-href="#/resume/new-list?from=nav" href="http://www.hrtell.com/rc/admin/index.html#/resume/new-list?from=nav"><span class="glyphicon glyphicon-leaf icon"></span>新收简历</a></li>
+        <li ng-class=" {active:page ==&#39;rec&#39;}"><a ng-href="#/rec/list" href="http://www.hrtell.com/rc/admin/index.html#/rec/list"><span class="glyphicon glyphicon-thumbs-up icon"></span>内部推荐</a></li>
+        <li ng-class=" {active:page ==&#39;talent&#39;}"><a ng-href="#/talent/talent-list?from=nav" href="http://www.hrtell.com/rc/admin/index.html#/talent/talent-list?from=nav"><span class="glyphicon glyphicon-hdd icon"></span>人才库</a></li>
+        <li ng-class=" {active:page ==&#39;statistic&#39;}"><a ng-href="#/statistic/index" href="http://www.hrtell.com/rc/admin/index.html#/statistic/index"><span class="glyphicon glyphicon-list-alt icon"></span>统计图表</a></li>
+        <li ng-class=" {active:page ==&#39;rank&#39;}"><a ng-href="#/rank/index" href="http://www.hrtell.com/rc/admin/index.html#/rank/index"><span class="glyphicon glyphicon-object-align-bottom icon"></span>排行榜</a></li>
+
+        <!-- ngIf: company.custom.redpack_enable -->
+        <!--SGS面试管理-->
+        <!-- ngIf: company.custom.SGS_interview -->
+
+    </ul><!-- end ngIf: user.role!='ML' -->
+
+
+    <!-- ngIf: user.role!='ML' --><div class="text-center padding ng-scope" ng-if="user.role!=&#39;ML&#39;">
+        <a class="btn btn-block btn-wx  mt10 btn-success" ng-click="vm.wxback()"><img height="16" src="./职位发布_files/wx.png" alt=""> 微信后台</a>
+    </div><!-- end ngIf: user.role!='ML' -->
+
+</div></ng-include>
+    <div class="main">
+        <!-- ngInclude: undefined --><ng-include src="&#39;views/com/top-bar.html&#39;" class="ng-scope"><div class="top-bar ng-scope">
+    <a class="pull-right btn btn-default btn-sm mt5" ng-click="vm.logout()"><span class="glyphicon glyphicon-log-out"></span> </a>
+
+    <div class="wel ng-binding">
+        <!-- ngIf: !user['0'].avatar --><img class="avatar ng-scope" ng-if="!user[&#39;0&#39;].avatar" ng-src="images/ic-top-person.png" alt="" src="./职位发布_files/ic-top-person.png"><!-- end ngIf: !user['0'].avatar -->
+        <!-- ngIf: user[0].avatar -->
+        上午好，<!-- ngIf: user.role!='ML' --><a ng-href="#/user-info" ng-if="user.role!=&#39;ML&#39;" class="ng-binding ng-scope" href="http://www.hrtell.com/rc/admin/index.html#/user-info">rc@garena.com</a><!-- end ngIf: user.role!='ML' --><!-- ngIf: user.role=='ML' -->！
+    </div>
+</div>
+</ng-include>
+        <search-more on-submit="vm.onSearchMoreSubmit()" is-show="vm.searchMoreShow"></search-more>
+        <!--ui-view-->
+        <!-- uiView:  --><div class="view clearfix pos_new" ui-view=""><!-- uiView: undefined --><ui-view class="ng-scope"><div style="margin-bottom: 10px" class="ng-scope">
+    <a>
+        <button type="button" class="btn btn-default btn-sm" ng-click="vm.back()">返回</button>
+    </a>
+    <!-- ngIf: corp.custom.import_jd&&vm.typeNew -->
+</div>
+
+<!--<div class="debug">-->
+<!--{{vm.pos.department}}-->
+
+<!--</div>-->
+<div class="pos-new container ng-scope">
+    <h2 class="page-tit ng-binding"> 职位发布 <!-- ngIf: vm.typeEdit --></h2>
+
+    <form class="form form-horizontal ng-pristine ng-valid ng-valid-required ng-valid-date" novalidate="" name="formPos" ng-submit="vm.submit();">
+        <div class="form-group">
+            <label class="control-label col-sm-2"><span class="red">* </span>职位性质：</label>
+
+            <div class="col-sm-4 form-inline">
+                <!-- ngRepeat: property in vm.options.position_properties --><span class="radio mr10 ng-scope" ng-repeat="property in vm.options.position_properties"><label class="ng-binding">
+                    <input type="radio" ng-model="vm.pos.property" value="SOCIAL" name="posType" class="ng-pristine ng-untouched ng-valid"> 社会招聘</label>
+                </span><!-- end ngRepeat: property in vm.options.position_properties --><span class="radio mr10 ng-scope" ng-repeat="property in vm.options.position_properties"><label class="ng-binding">
+                    <input type="radio" ng-model="vm.pos.property" value="CAMPUS" name="posType" class="ng-pristine ng-untouched ng-valid"> 校招职位</label>
+                </span><!-- end ngRepeat: property in vm.options.position_properties --><!--
+                <span class="radio mr10"><label>
+                    <input type="radio" ng-model="vm.pos.property" value="SOCIAL" name="posType"
+                           class="ng-pristine ng-untouched ng-valid"> 社会招聘</label>
+                </span>
+                <span class="radio mr10"><label>
+                    <input type="radio" ng-model="vm.pos.property" value="CAMPUS" name="posType"
+                           class="ng-pristine ng-untouched ng-valid"> 校园招聘</label>
+                </span>-->
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2"><span class="red">* </span>职位名称：</label>
+            <div class="col-sm-4">
+                <input type="text" ng-model="vm.pos.name" name="posName" error-label="职位名称" placeholder="请填写职位名称" required="" class="form-control ng-pristine ng-untouched ng-valid ng-valid-required">
+            </div>
+            <div class="col-sm-4">
+                <!-- ngIf: vm.submitted&& formPos.posName.$invalid -->
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2"><span class="red">* </span>所属部门：</label>
+
+            <div class="col-sm-4">
+                <!--  <input type="text" ng-model="vm.pos.department.name" name="department" required placeholder="如：技术部"
+                         class="form-control"/>-->
+                <div class="form-inline dpt ng-isolate-scope" select-dpt="vm.pos.department" clear-model="vm.clearDepartment" active="vm.pos.department_id">
+    <div class="mr5 ui-select-container select2 select2-container ng-valid" ng-class="{&#39;select2-container-active select2-dropdown-open open&#39;: $select.open, &#39;select2-container-disabled&#39;: $select.disabled, &#39;select2-container-active&#39;: $select.focus, &#39;select2-allowclear&#39;: $select.allowClear &amp;&amp; !$select.isEmpty()}" ng-model="vm.selectDpt" style="width: 285px;" on-select="onSelect($item,$select)" theme="select2"><a class="select2-choice ui-select-match select2-default" ng-class="{&#39;select2-default&#39;: $select.isEmpty()}" ng-click="$select.toggle($event)" aria-label="Select box select" placeholder="请选择所属部门"><span ng-show="$select.isEmpty()" class="select2-chosen ng-binding">请选择所属部门</span> <span ng-hide="$select.isEmpty()" class="select2-chosen ng-hide" ng-transclude=""><span class="ng-binding ng-scope"></span></span> <!-- ngIf: $select.allowClear && !$select.isEmpty() --> <span class="select2-arrow ui-select-toggle"><b></b></span></a><div class="ui-select-dropdown select2-drop select2-with-searchbox select2-drop-active select2-display-none" ng-class="{&#39;select2-display-none&#39;: !$select.open}"><div class="select2-search" ng-show="$select.searchEnabled"><input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="combobox" aria-expanded="true" aria-owns="ui-select-choices-11" aria-label="Select box" aria-activedescendant="ui-select-choices-row-11-0" class="ui-select-search select2-input ng-pristine ng-untouched ng-valid" ng-model="$select.search"></div><ul class="ui-select-choices ui-select-choices-content select2-results ng-scope" repeat="item in departments | filter: $select.search"><li class="ui-select-choices-group" ng-class="{&#39;select2-result-with-children&#39;: $select.choiceGrouped($group) }"><div ng-show="$select.choiceGrouped($group)" class="ui-select-choices-group-label select2-result-label ng-binding ng-hide" ng-bind="$group.name"></div><ul role="listbox" id="ui-select-choices-11" ng-class="{&#39;select2-result-sub&#39;: $select.choiceGrouped($group), &#39;select2-result-single&#39;: !$select.choiceGrouped($group) }" class="select2-result-single"><!-- ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --></ul></li></ul></div><ui-select-single></ui-select-single><input ng-disabled="$select.disabled" class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-11" aria-label="Select box focus" aria-haspopup="true" role="button"></div>
+</div>
+            </div>
+            <div class="col-sm-2">
+                <!-- ngIf: vm.submitted&& !vm.pos.department -->
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2"><span class="red">* </span>职位类别：</label>
+
+            <div class="col-sm-4">
+                <!-- <input type="text" class="form-control" name="category" required ng-model="vm.pos.category.name"
+                        placeholder="如：游戏开发"/>-->
+                <div class="form-inline dpt ng-isolate-scope" select-ctgy="vm.pos.category" clear-ctgy="vm.clearCategory" active="vm.pos.category_id">
+    <div class="mr5 ui-select-container select2 select2-container ng-valid" ng-class="{&#39;select2-container-active select2-dropdown-open open&#39;: $select.open, &#39;select2-container-disabled&#39;: $select.disabled, &#39;select2-container-active&#39;: $select.focus, &#39;select2-allowclear&#39;: $select.allowClear &amp;&amp; !$select.isEmpty()}" ng-model="vm.selectCtgy" style="width: 285px;" theme="select2" on-select="onSelect($item,$select)"><a class="select2-choice ui-select-match" ng-class="{&#39;select2-default&#39;: $select.isEmpty()}" ng-click="$select.toggle($event)" aria-label="Select box select" placeholder="请选择职位类别"><span ng-show="$select.isEmpty()" class="select2-chosen ng-binding ng-hide">请选择职位类别</span> <span ng-hide="$select.isEmpty()" class="select2-chosen" ng-transclude=""><span class="ng-binding ng-scope">Sales Support</span></span> <!-- ngIf: $select.allowClear && !$select.isEmpty() --> <span class="select2-arrow ui-select-toggle"><b></b></span></a><div class="ui-select-dropdown select2-drop select2-with-searchbox select2-drop-active select2-display-none" ng-class="{&#39;select2-display-none&#39;: !$select.open}"><div class="select2-search" ng-show="$select.searchEnabled"><input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="combobox" aria-expanded="true" aria-owns="ui-select-choices-12" aria-label="Select box" aria-activedescendant="ui-select-choices-row-12-0" class="ui-select-search select2-input ng-pristine ng-untouched ng-valid" ng-model="$select.search"></div><ul class="ui-select-choices ui-select-choices-content select2-results ng-scope" repeat="item in categories | filter: $select.search"><li class="ui-select-choices-group" ng-class="{&#39;select2-result-with-children&#39;: $select.choiceGrouped($group) }"><div ng-show="$select.choiceGrouped($group)" class="ui-select-choices-group-label select2-result-label ng-binding ng-hide" ng-bind="$group.name"></div><ul role="listbox" id="ui-select-choices-12" ng-class="{&#39;select2-result-sub&#39;: $select.choiceGrouped($group), &#39;select2-result-single&#39;: !$select.choiceGrouped($group) }" class="select2-result-single"><!-- ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --></ul></li></ul></div><ui-select-single></ui-select-single><input ng-disabled="$select.disabled" class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-12" aria-label="Select box focus" aria-haspopup="true" role="button"></div>
+</div>
+            </div>
+            <div class="col-sm-2">
+                <!-- ngIf: vm.submitted&& !vm.pos.category -->
+            </div>
+        </div>
+
+
+        <div class="form-group">
+
+            <label class="control-label col-sm-2"><span class="red">* </span>招聘人数：</label>
+
+            <div class="col-sm-5 form-inline ">
+                <input type="number" class="form-control ng-pristine ng-untouched ng-valid ng-valid-required" placeholder="招聘人数" ng-model="vm.pos.hiring_count" name="hire_count" required="" style="width: 100px;"> 人
+
+                <!-- ngIf: vm.submitted&&(formPos.hire_count.$invalid||formPos.required_education.$invalid) -->
+            </div>
+
+
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2"><span class="red">* </span>发布城市：</label>
+
+            <div class="col-sm-9  ">
+
+                <a class="btn btn-default btn-sm mt5 pull-left" ng-click="vm.showLoc()">选择城市</a>
+
+
+                <div class="region-dialog  dialog ng-isolate-scope ng-hide" ng-show="isShow" style="position: absolute;" is-show="vm.locShow" result="vm.city_list" clear-result="vm.clearCityList">
+
+    <div class="modal-body">
+        <span class="close small glyphicon glyphicon-remove" ng-click="hide()"></span>
+
+        <div class="region-select">
+            <div class="hd">选择结果 <span class="results"> <!-- ngRepeat: item in result --><a class="item ng-binding ng-scope" ng-repeat="item in result">上海 <span class="small glyphicon glyphicon-remove" ng-click="removeResult(item)"></span></a><!-- end ngRepeat: item in result --></span></div>
+            <div class="content">
+                <div class="cc ">
+                    常用： <!-- ngRepeat: item in cc --><a ng-repeat="item in cc" class="item ng-binding ng-scope" ng-class="{&#39;active&#39;:item.active}" ng-click="clickCc(item)">全国</a><!-- end ngRepeat: item in cc --><a ng-repeat="item in cc" class="item ng-binding ng-scope" ng-class="{&#39;active&#39;:item.active}" ng-click="clickCc(item)">北京</a><!-- end ngRepeat: item in cc --><a ng-repeat="item in cc" class="item ng-binding ng-scope" ng-class="{&#39;active&#39;:item.active}" ng-click="clickCc(item)">上海</a><!-- end ngRepeat: item in cc --><a ng-repeat="item in cc" class="item ng-binding ng-scope" ng-class="{&#39;active&#39;:item.active}" ng-click="clickCc(item)">广州</a><!-- end ngRepeat: item in cc --><a ng-repeat="item in cc" class="item ng-binding ng-scope" ng-class="{&#39;active&#39;:item.active}" ng-click="clickCc(item)">深圳</a><!-- end ngRepeat: item in cc --><a ng-repeat="item in cc" class="item ng-binding ng-scope" ng-class="{&#39;active&#39;:item.active}" ng-click="clickCc(item)">天津</a><!-- end ngRepeat: item in cc --><a ng-repeat="item in cc" class="item ng-binding ng-scope" ng-class="{&#39;active&#39;:item.active}" ng-click="clickCc(item)">重庆</a><!-- end ngRepeat: item in cc -->
+                </div>
+                <div class="c1">
+                    <!-- ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">广东省</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">江苏省</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">浙江省</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">四川省</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">海南省</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">福建省</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">山东省</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">江西省</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">广西</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">安徽省</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">河北省</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">河南省</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">湖北省</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">湖南省</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">陕西省</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">山西省</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">黑龙江省</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">辽宁省</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">吉林省</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">云南省</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">贵州省</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">甘肃省</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">内蒙古</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">宁夏</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">西藏</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">新疆</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">青海省</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">香港</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">澳门</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">台湾</a><!-- end ngRepeat: item in c1 --><a class="item ng-binding ng-scope" ng-repeat="item in c1" ng-class="{&#39;active&#39;:item.active}" ng-click="clickC1(item)">新加坡</a><!-- end ngRepeat: item in c1 -->
+                </div>
+                <!-- ngIf: c2Show -->
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <!-- ngIf: error -->
+        <a class="btn btn-success btn-sm" ng-click="ok()">确定</a>
+        <a class="btn btn-default btn-sm" ng-click="cancel()">取消</a>
+    </div>
+
+</div>
+
+                <div class=" cat-select " style="margin:0 0 0  90px;">
+                    <!-- ngIf: !vm.city_list.length&&!(vm.submitted&&vm.errors.location) -->
+                    <!-- ngIf: vm.submitted&&vm.errors.location -->
+                    <!-- ngRepeat: item in vm.city_list --><span class="lable-selcected ng-binding ng-scope" ng-repeat="item in vm.city_list">上海</span><!-- end ngRepeat: item in vm.city_list -->
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2"><span class="red">* </span>学历要求：</label>
+
+            <div class="col-sm-8 form-inline">
+                <div class="mr5 ui-select-container select2 select2-container ng-valid ng-valid-required" ng-class="{&#39;select2-container-active select2-dropdown-open open&#39;: $select.open, &#39;select2-container-disabled&#39;: $select.disabled, &#39;select2-container-active&#39;: $select.focus, &#39;select2-allowclear&#39;: $select.allowClear &amp;&amp; !$select.isEmpty()}" ng-model="vm.pos.edu" theme="select2" name="edu" required="required" style="width: 200px;" search-enabled="false"><a class="select2-choice ui-select-match" ng-class="{&#39;select2-default&#39;: $select.isEmpty()}" ng-click="$select.toggle($event)" aria-label="Select box select" placeholder="请选择学历"><span ng-show="$select.isEmpty()" class="select2-chosen ng-binding ng-hide">请选择学历</span> <span ng-hide="$select.isEmpty()" class="select2-chosen" ng-transclude=""><span class="ng-binding ng-scope">本科</span></span> <!-- ngIf: $select.allowClear && !$select.isEmpty() --> <span class="select2-arrow ui-select-toggle"><b></b></span></a><div class="ui-select-dropdown select2-drop select2-with-searchbox select2-drop-active select2-display-none" ng-class="{&#39;select2-display-none&#39;: !$select.open}"><div class="select2-search ng-hide" ng-show="$select.searchEnabled"><input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="combobox" aria-expanded="true" aria-owns="ui-select-choices-8" aria-label="Select box" aria-activedescendant="ui-select-choices-row-8-0" class="ui-select-search select2-input ng-pristine ng-untouched ng-valid" ng-model="$select.search"></div><ul class="ui-select-choices ui-select-choices-content select2-results ng-scope" repeat="item in vm.view.edu | filter: $select.search"><li class="ui-select-choices-group" ng-class="{&#39;select2-result-with-children&#39;: $select.choiceGrouped($group) }"><div ng-show="$select.choiceGrouped($group)" class="ui-select-choices-group-label select2-result-label ng-binding ng-hide" ng-bind="$group.name"></div><ul role="listbox" id="ui-select-choices-8" ng-class="{&#39;select2-result-sub&#39;: $select.choiceGrouped($group), &#39;select2-result-single&#39;: !$select.choiceGrouped($group) }" class="select2-result-single"><!-- ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --></ul></li></ul></div><ui-select-single></ui-select-single><input ng-disabled="$select.disabled" class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-8" aria-label="Select box focus" aria-haspopup="true" role="button"></div>
+                含以上
+
+                    <!-- ngIf: vm.submitted&&formPos.edu.$invalid -->
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2"><span class="red">* </span>工作经验：</label>
+
+            <div class="col-sm-4 ">
+                <div class="ui-select-container select2 select2-container ng-valid ng-valid-required" ng-class="{&#39;select2-container-active select2-dropdown-open open&#39;: $select.open, &#39;select2-container-disabled&#39;: $select.disabled, &#39;select2-container-active&#39;: $select.focus, &#39;select2-allowclear&#39;: $select.allowClear &amp;&amp; !$select.isEmpty()}" ng-model="vm.pos.exp" theme="select2" name="exp" required="required" search-enabled="false"><a class="select2-choice ui-select-match" ng-class="{&#39;select2-default&#39;: $select.isEmpty()}" ng-click="$select.toggle($event)" aria-label="Select box select" placeholder="工作经验"><span ng-show="$select.isEmpty()" class="select2-chosen ng-binding ng-hide">工作经验</span> <span ng-hide="$select.isEmpty()" class="select2-chosen" ng-transclude=""><span class="ng-binding ng-scope">1-3年</span></span> <!-- ngIf: $select.allowClear && !$select.isEmpty() --> <span class="select2-arrow ui-select-toggle"><b></b></span></a><div class="ui-select-dropdown select2-drop select2-with-searchbox select2-drop-active select2-display-none" ng-class="{&#39;select2-display-none&#39;: !$select.open}"><div class="select2-search ng-hide" ng-show="$select.searchEnabled"><input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="combobox" aria-expanded="true" aria-owns="ui-select-choices-9" aria-label="Select box" aria-activedescendant="ui-select-choices-row-9-0" class="ui-select-search select2-input ng-pristine ng-untouched ng-valid" ng-model="$select.search"></div><ul class="ui-select-choices ui-select-choices-content select2-results ng-scope" repeat="item in vm.view.exp | filter: $select.search"><li class="ui-select-choices-group" ng-class="{&#39;select2-result-with-children&#39;: $select.choiceGrouped($group) }"><div ng-show="$select.choiceGrouped($group)" class="ui-select-choices-group-label select2-result-label ng-binding ng-hide" ng-bind="$group.name"></div><ul role="listbox" id="ui-select-choices-9" ng-class="{&#39;select2-result-sub&#39;: $select.choiceGrouped($group), &#39;select2-result-single&#39;: !$select.choiceGrouped($group) }" class="select2-result-single"><!-- ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --></ul></li></ul></div><ui-select-single></ui-select-single><input ng-disabled="$select.disabled" class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-9" aria-label="Select box focus" aria-haspopup="true" role="button"></div>
+            </div>
+            <div class="col-sm-4 ">
+                <!-- ngIf: vm.submitted &&formPos.exp.$invalid -->
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2"><span class="red">* </span>职位月薪：</label>
+
+            <div class="col-sm-4">
+                <div class="ui-select-container select2 select2-container ng-valid ng-valid-required" ng-class="{&#39;select2-container-active select2-dropdown-open open&#39;: $select.open, &#39;select2-container-disabled&#39;: $select.disabled, &#39;select2-container-active&#39;: $select.focus, &#39;select2-allowclear&#39;: $select.allowClear &amp;&amp; !$select.isEmpty()}" ng-model="vm.pos.salary" theme="select2" name="salary" required="required" search-enabled="false"><a class="select2-choice ui-select-match" ng-class="{&#39;select2-default&#39;: $select.isEmpty()}" ng-click="$select.toggle($event)" aria-label="Select box select" placeholder="请选择薪资范围"><span ng-show="$select.isEmpty()" class="select2-chosen ng-binding ng-hide">请选择薪资范围</span> <span ng-hide="$select.isEmpty()" class="select2-chosen" ng-transclude=""><span class="ng-binding ng-scope">10000-14999</span></span> <!-- ngIf: $select.allowClear && !$select.isEmpty() --> <span class="select2-arrow ui-select-toggle"><b></b></span></a><div class="ui-select-dropdown select2-drop select2-with-searchbox select2-drop-active select2-display-none" ng-class="{&#39;select2-display-none&#39;: !$select.open}"><div class="select2-search ng-hide" ng-show="$select.searchEnabled"><input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="combobox" aria-expanded="true" aria-owns="ui-select-choices-10" aria-label="Select box" aria-activedescendant="ui-select-choices-row-10-0" class="ui-select-search select2-input ng-pristine ng-untouched ng-valid" ng-model="$select.search"></div><ul class="ui-select-choices ui-select-choices-content select2-results ng-scope" repeat="item in vm.view.salary | filter: $select.search"><li class="ui-select-choices-group" ng-class="{&#39;select2-result-with-children&#39;: $select.choiceGrouped($group) }"><div ng-show="$select.choiceGrouped($group)" class="ui-select-choices-group-label select2-result-label ng-binding ng-hide" ng-bind="$group.name"></div><ul role="listbox" id="ui-select-choices-10" ng-class="{&#39;select2-result-sub&#39;: $select.choiceGrouped($group), &#39;select2-result-single&#39;: !$select.choiceGrouped($group) }" class="select2-result-single"><!-- ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --></ul></li></ul></div><ui-select-single></ui-select-single><input ng-disabled="$select.disabled" class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-10" aria-label="Select box focus" aria-haspopup="true" role="button"></div>
+            </div>
+            <div class="col-sm-4">
+                <!-- ngIf: vm.submitted &&formPos.salary.$invalid -->
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">截止日期：</label>
+
+            <div class="col-sm-9 form-inline  ">
+                <span class="input-group has-datepicker">
+                    <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-isolate-scope ng-valid-date" ng-click="vm.openCalendar($event)" ng-model="vm.pos.deadline" is-open="vm.calendarOpened " show-weeks="false" show-button-bar="false" custom-class="datepicker" datepicker-popup=""><!-- ngIf: isOpen -->
+                     <span class="input-group-addon" ng-click="vm.openCalendar($event)"><span><span class="glyphicon glyphicon-calendar"></span></span></span>
+                    </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2"><span class="red">* </span>职位描述：</label>
+            <div class="col-sm-10 " ng-class="{&#39;errorDescription&#39;:vm.descriptionError}">
+                <div class="ke-container ke-container-default" style="width: 100%;"><div style="display:block;" class="ke-toolbar" unselectable="on"><span class="ke-outline" data-name="source" title="HTML代码" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-source" unselectable="on"></span></span><span class="ke-inline-block ke-separator"></span><span class="ke-outline" data-name="undo" title="后退(Ctrl+Z)" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-undo" unselectable="on"></span></span><span class="ke-outline" data-name="redo" title="前进(Ctrl+Y)" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-redo" unselectable="on"></span></span><span class="ke-inline-block ke-separator"></span><span class="ke-outline" data-name="preview" title="预览" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-preview" unselectable="on"></span></span><span class="ke-outline" data-name="template" title="插入模板" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-template" unselectable="on"></span></span><span class="ke-outline" data-name="code" title="插入程序代码" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-code" unselectable="on"></span></span><span class="ke-outline" data-name="cut" title="剪切(Ctrl+X)" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-cut" unselectable="on"></span></span><span class="ke-outline" data-name="copy" title="复制(Ctrl+C)" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-copy" unselectable="on"></span></span><span class="ke-outline" data-name="paste" title="粘贴(Ctrl+V)" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-paste" unselectable="on"></span></span><span class="ke-outline" data-name="plainpaste" title="粘贴为无格式文本" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-plainpaste" unselectable="on"></span></span><span class="ke-inline-block ke-separator"></span><span class="ke-outline" data-name="justifyleft" title="左对齐" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-justifyleft" unselectable="on"></span></span><span class="ke-outline" data-name="justifycenter" title="居中" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-justifycenter" unselectable="on"></span></span><span class="ke-outline" data-name="justifyright" title="右对齐" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-justifyright" unselectable="on"></span></span><span class="ke-outline" data-name="justifyfull" title="两端对齐" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-justifyfull" unselectable="on"></span></span><span class="ke-outline" data-name="insertorderedlist" title="编号" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-insertorderedlist" unselectable="on"></span></span><span class="ke-outline" data-name="insertunorderedlist" title="项目符号" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-insertunorderedlist" unselectable="on"></span></span><span class="ke-outline" data-name="indent" title="增加缩进" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-indent" unselectable="on"></span></span><span class="ke-outline" data-name="outdent" title="减少缩进" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-outdent" unselectable="on"></span></span><span class="ke-outline" data-name="subscript" title="下标" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-subscript" unselectable="on"></span></span><span class="ke-outline" data-name="superscript" title="上标" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-superscript" unselectable="on"></span></span><span class="ke-outline" data-name="clearhtml" title="清理HTML代码" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-clearhtml" unselectable="on"></span></span><span class="ke-outline" data-name="quickformat" title="一键排版" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-quickformat" unselectable="on"></span></span><span class="ke-outline" data-name="selectall" title="全选(Ctrl+A)" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-selectall" unselectable="on"></span></span><span class="ke-inline-block ke-separator"></span><span class="ke-outline" data-name="fullscreen" title="全屏显示" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-fullscreen" unselectable="on"></span></span><div class="ke-hr"></div><span class="ke-outline" data-name="formatblock" title="段落" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-formatblock" unselectable="on"></span></span><span class="ke-outline" data-name="fontname" title="字体" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-fontname" unselectable="on"></span></span><span class="ke-outline" data-name="fontsize" title="文字大小" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-fontsize" unselectable="on"></span></span><span class="ke-inline-block ke-separator"></span><span class="ke-outline" data-name="forecolor" title="文字颜色" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-forecolor" unselectable="on"></span></span><span class="ke-outline" data-name="hilitecolor" title="文字背景" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-hilitecolor" unselectable="on"></span></span><span class="ke-outline" data-name="bold" title="粗体(Ctrl+B)" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-bold" unselectable="on"></span></span><span class="ke-outline" data-name="italic" title="斜体(Ctrl+I)" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-italic" unselectable="on"></span></span><span class="ke-outline" data-name="underline" title="下划线(Ctrl+U)" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-underline" unselectable="on"></span></span><span class="ke-outline" data-name="strikethrough" title="删除线" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-strikethrough" unselectable="on"></span></span><span class="ke-outline" data-name="lineheight" title="行距" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-lineheight" unselectable="on"></span></span><span class="ke-outline" data-name="removeformat" title="删除格式" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-removeformat" unselectable="on"></span></span><span class="ke-inline-block ke-separator"></span><span class="ke-outline" data-name="table" title="表格" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-table" unselectable="on"></span></span><span class="ke-outline" data-name="hr" title="插入横线" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-hr" unselectable="on"></span></span><span class="ke-outline" data-name="emoticons" title="插入表情" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-emoticons" unselectable="on"></span></span><span class="ke-outline" data-name="baidumap" title="百度地图" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-baidumap" unselectable="on"></span></span><span class="ke-outline" data-name="pagebreak" title="插入分页符" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-pagebreak" unselectable="on"></span></span><span class="ke-outline" data-name="anchor" title="锚点" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-anchor" unselectable="on"></span></span><span class="ke-outline" data-name="link" title="超级链接" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-link" unselectable="on"></span></span><span class="ke-outline" data-name="unlink" title="取消超级链接" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-unlink" unselectable="on"></span></span><span class="ke-outline" data-name="image" title="图片" unselectable="on"><span class="ke-toolbar-icon ke-toolbar-icon-url ke-icon-image" unselectable="on"></span></span></div><div style="display: block; height: 100px;" class="ke-edit"><iframe class="ke-edit-iframe" hidefocus="true" frameborder="0" tabindex="" style="width: 100%; height: 100px;" src="./职位发布_files/saved_resource.html"></iframe><textarea class="ke-edit-textarea" hidefocus="true" tabindex="" style="width: 100%; height: 100px; display: none;"></textarea></div><div class="ke-statusbar"><span class="ke-inline-block ke-statusbar-center-icon"></span><span class="ke-inline-block ke-statusbar-right-icon"></span></div></div><div um="" ng-model="vm.kindeditor" class="ng-pristine ng-untouched ng-valid ng-isolate-scope" style="display: none;"></div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="control-label col-sm-2"><span class="red">* </span>投递邮箱：</label>
+
+            <div class="col-sm-6 ">
+                <input type="text" ng-model="vm.pos.hr_email" required="" name="hr_email" class="form-control ng-pristine ng-untouched ng-valid ng-valid-required">
+
+            </div>
+            <div class="col-sm-4">
+                <!-- ngIf: !vm.submitted||formPos.hr_email.$valid --><div class="gray small ng-scope" style="line-height: 34px" ng-if="!vm.submitted||formPos.hr_email.$valid">
+                    此邮箱仅用于接收简历，多邮箱请以英文逗号分割
+                </div><!-- end ngIf: !vm.submitted||formPos.hr_email.$valid -->
+                <!-- ngIf: vm.submitted &&formPos.hr_email.$invalid -->
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">职位Tag：</label>
+            <div class="col-sm-10">
+                <label style="font-weight: normal"><input type="checkbox" name="tag" ng-model="vm.tag.hot" class="ng-pristine ng-untouched ng-valid">热招</label>
+                <label style="font-weight: normal"><input type="checkbox" name="tag" ng-model="vm.tag.urgent" class="ng-pristine ng-untouched ng-valid">加急</label>
+            </div>
+        </div>
+
+        <!-- ngIf: corp.custom.redpack_enable&&(vm.redPackRef.REF_INTERVIEW.count>0||vm.redPackRef.REF_ONBOARD.count>0||vm.redPackRef.REF_PASSPROBATION.count>0) -->
+        <!-- ngIf: vm.previewReady -->
+        <div class="form-group mt10">
+            <div class="col-sm-9 col-sm-offset-2">
+                <!-- ngIf: vm.typeEdit -->
+                <!-- ngIf: vm.typeNew --><button ng-if="vm.typeNew" class="btn btn-primary ng-scope">确认发布</button><!-- end ngIf: vm.typeNew -->
+                <a class="btn btn-info ml10 ng-isolate-scope" ng-click="vm.preview()" click-stop-prop="">预览</a>
+            </div>
+        </div>
+    </form>
+    <!--确认发布弹出对话框-->
+    <!-- ngIf: vm.confirm_show --><!-- /.modal -->
+</div>
+
+
+<script type="text/ng-template" id="projectNew.html" class="ng-scope">
+    <div class="dialog-alert dialog">
+        <div class="modal-header" ng-if="title">
+            <a class="close" data-dismiss="modal" ng-click="close()"><span aria-hidden="true">&times;</span></a>
+            <h5 class="modal-title">{{title}}</h5>
+        </div>
+        <div class="modal-body">
+            <ng-include src="'views/com/project-new.html'"></ng-include>
+        </div>
+    </div>
+</script>
+</ui-view></div>
+        <!-- ngInclude: undefined --><ng-include src="&#39;views/com/footer.html&#39;" class="ng-scope"><div class="footer text-center  ng-scope">
+    COPYRIGHT @ 2015 HRTPS. ALL RIGHTS RESERVED. HRTPS 版权所有
+</div></ng-include>
+    </div>
+</div><!-- end ngIf: user -->
+
+<script type="text/javascript" src="./职位发布_files/js"></script>
+<script>
+    var isDev=/dev/.test(location.hostname);
+    if(!isDev){                 //线上环境加载change.js
+        document.write('<script type="text/javascript" src="scripts/changes.js?t='+new Date().getTime()+'"><\/script>');
+    }
+    document.write('<script src="bower_components/requirejs/require.js" data-main="scripts/main.min.js?t='+(new Date()).getTime()+'"><\/script>');
+</script><script type="text/javascript" src="./职位发布_files/changes.js.下载"></script><script src="./职位发布_files/require.js.下载" data-main="scripts/main.min.js?t=1491531579610"></script>
+
+
+
+</body></html>

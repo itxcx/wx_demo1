@@ -1,0 +1,33 @@
+<!--pages/resume/index.wxml-->
+<import src="../../../template/tip.wxml" />
+<view class="resume">
+    <view class="title">
+        {{pos.name}}
+    </view>
+    <view class="resumeList">
+        <view class="listTitle">简历列表</view>
+        <radio-group class="radio-group" bindchange="radioChange" wx:if="{{resumes&&resumes.length!=0}}">
+           <view  wx:for="{{resumes}}" class="resumeItem">
+                 <label class="radio listItem" >
+                    <radio value="{{item.id}}" />   
+                    {{item.info.name}} <span class="resumeOrigin">来源：{{item.info.cv_name}}</span>
+                </label>
+           </view>
+        </radio-group>
+        <view class="noResume" wx:if="{{!resumes||resumes.length==0}}">暂无简历！</view>
+    </view>
+    <view>
+        <button type="primary" class="btn-block" bindtap="apply">申请职位</button>
+    </view>
+    <view style="margin-top:1rem;">
+        <button type="warn" class="btn-block" bindtap="deleteResume">删除简历</button>
+    </view>
+    <view style="margin-top:1rem;">
+        <button class="btn-block update" bindtap="updateResume">修改简历</button>
+    </view>
+    <view style="margin-top:1rem;">
+        <button type="default" bindtap="createResume" class="btn-block">添加新简历</button>
+    </view>
+</view>
+
+<template is="tip" data="{{tip}}" wx:if="{{tipShow}}"></template>

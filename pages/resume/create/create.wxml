@@ -1,0 +1,48 @@
+<!--pages/resume/add.wxml-->
+<import src="../../../template/tip.wxml" />
+<view class="formList">
+    <form bindsubmit="formSubmit" class="resume">
+        <view>
+            <label>
+                <span>简历名称<span class="tip">*</span>：</span>
+                <input  type="text" name="cv_name" value="{{initData.cv_name||'自建简历'}}"/>
+            </label>
+            <label>
+               <span> 姓名<span class="tip">*</span>：</span>
+                <input  type="text" name="name" value="{{initData.name}}"/>
+            </label>
+            <label>
+               <span> 年龄<span class="tip">*</span>：</span>
+                <input  type="number" name="age" value="{{initData.age}}"/>
+            </label>
+            <label>
+               <span> 性别<span class="tip">*</span>：</span>
+                <radio-group class="radio-group" bindchange="radioChange">
+                <label class="radio" wx:for="{{genders}}">
+                    <radio value="{{item.value}}" checked="{{item.checked}}"/>{{item.label}}
+                </label>
+                </radio-group>
+            </label>
+            <label>
+               <span> 手机<span class="tip">*</span>：</span>
+                <input  type="number" name="mobile" value="{{initData.mobile}}"/>
+            </label>
+            <label>
+               <span> 邮箱<span class="tip">*</span>：</span>
+                <input  type="text" name="email" value="{{initData.email}}"/>
+            </label>
+            <label>
+               <span> 工作经验<span class="tip">*</span>：</span>
+                <input  type="number" name="work_exp" value="{{initData.work_exp}}"/>
+            </label>
+            <!--<view class="file">-->
+                <!--<view><button type="primary" class="btn-small" bindtap="uploadFile">上传文件</button></view>-->
+                <!--<view class="tipFile">提示信息</view>-->
+            <!--</view>-->
+        </view>
+        <view>
+            <button class="btn-block" type="primary" formType="submit">提交</button>
+        </view>
+    </form>
+</view>
+<template is="tip" data="{{tip}}" wx:if="{{tipShow}}"></template>

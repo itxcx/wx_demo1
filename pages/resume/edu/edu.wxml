@@ -1,0 +1,46 @@
+<view>
+    <view class="formList">
+        <form bindsubmit="formSubmit" class="resume">
+            <view>
+                <label>
+                    <span>开始时间<span class="tip">*</span>：</span>
+                    <picker mode="date"   bindchange="eduStartTimeChange" fields="month" >
+                        <view class="picker">
+                            {{startTime}}
+                        </view>
+                    </picker>
+                </label>
+                <label>
+                    <span>结束时间<span class="tip">*</span>：</span>
+                    <picker mode="date"   bindchange="eduEndTimeChange" fields="month" >
+                        <view class="picker">
+                            {{endTime}}
+                        </view>
+                    </picker>
+                </label>
+
+                <label>
+                    <span> 学校<span class="tip">*</span>：</span>
+                    <input  type="text" name="school" bindchange=""/>
+                </label>
+
+                <label>
+                    <span> 学历<span class="tip">*</span>：</span>
+                    <picker bindchange="degreeChange"  range="{{degrees}}" mode="selector">
+                        <view class="picker">
+                            {{degrees[degree]}}
+                        </view>
+                    </picker>
+                </label>
+
+                <label>
+                    <span> 专业<span class="tip">*</span>：</span>
+                    <input  type="text" name="major" />
+                </label>
+            </view>
+            <view>
+                <button class="btn-block" type="primary" formType="submit">提交</button>
+            </view>
+        </form>
+    </view>
+</view>

@@ -1,0 +1,23 @@
+
+.tip{
+    font-size: 0.8rem;
+    padding: 1rem;
+}
+
+.logo{
+    width: 1rem;
+    height: 1rem
+}
+.list-item{
+    padding: 1rem;
+    border: 1px solid gainsboro;
+    margin-top: -1px;
+}
+.go{
+    width: 0.5rem;
+    height: 0.5rem;
+    float: right
+}
+.btns{
+    padding: 1rem 0;
+}

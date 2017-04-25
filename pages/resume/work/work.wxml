@@ -1,0 +1,43 @@
+<view>
+    <view class="formList">
+        <form bindsubmit="formSubmit" class="resume">
+            <view>
+                <label>
+                    <span>开始时间<span class="tip">*</span>：</span>
+                    <picker mode="date"   bindchange="workStartTimeChange" fields="month" >
+                        <view class="picker">
+                            {{startTime}}
+                        </view>
+                    </picker>
+                </label>
+                <label>
+                    <span>结束时间<span class="tip">*</span>：</span>
+                    <picker mode="date"   bindchange="workEndTimeChange" fields="month" >
+                        <view class="picker">
+                            {{endTime}}
+                        </view>
+                    </picker>
+                </label>
+
+                <label>
+                    <span> 公司<span class="tip">*</span>：</span>
+                    <input  type="text" name="company" bindchange=""/>
+                </label>
+
+
+                <label>
+                    <span> 所任职位<span class="tip">*</span>：</span>
+                    <input  type="text" name="position" />
+                </label>
+
+                <view class="textArea">
+                    <view> 工作描述<span class="tip">*</span>：</view>
+                    <textarea bindblur="bindTextAreaBlur" auto-height  name="detail" class="posdetail"/>
+                </view>
+            </view>
+            <view>
+                <button class="btn-block" type="primary" formType="submit">提交</button>
+            </view>
+        </form>
+    </view>
+</view>

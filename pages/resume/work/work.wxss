@@ -1,0 +1,62 @@
+
+
+.resume input{
+    border: 1px solid gainsboro;
+}
+label{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content:space-between;
+    margin: 0.4rem;
+    height: 2rem;
+    line-height: 2rem;
+    border-bottom: 1px solid gainsboro;
+    padding: 0 1rem;
+}
+label input{
+    width: 65%;
+    /*padding: 0 0 0 0.5rem;*/
+    height: 2rem;
+    line-height: 2rem;
+    border: none!important;
+
+}
+label picker{
+    width: 65%;
+    height: 2rem;
+    line-height: 2rem;
+    border: none!important;
+}
+.picker{
+    height:2rem;
+}
+.radio{
+    display: inline-block;
+    border: none;
+
+}
+.radio-group{
+    margin-top: -0.5rem;
+    width: 70%
+}
+.tip{
+    color:red;
+    font-size:12px;
+    display:inline-block;
+    margin:-1rem 0 0 3px;
+}
+.file{
+    padding:0.5rem 1rem;
+}
+.tipFile{
+    font-size:0.8rem;
+}
+.posdetail{
+    border:1px solid gainsboro;
+    width:100%;
+    padding:5px;
+}
+.textArea{
+    padding: 0 1rem;
+    margin-bottom:1rem;
+}

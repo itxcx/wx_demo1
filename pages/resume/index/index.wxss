@@ -1,0 +1,49 @@
+.resume{
+    padding: 1rem;
+    font-size: 0.8rem;
+    font-family: "黑体";
+}
+.title{
+   
+    line-height: 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.resumeList{
+    margin: 1rem 0;
+}
+.resumeList .listTitle{
+    font-size: 1rem;
+    height: 2rem;
+    line-height: 2rem
+}
+.resumeList .listItem{
+    font-size: 1rem;
+    padding-left:1rem; 
+    height: 3rem;
+    line-height: 3rem;
+}
+.resumeOrigin{
+    float: right;
+    font-size: 0.8rem;
+    color: #666;
+}
+.noResume{
+    text-align: center;
+    color: red;
+    height: 5rem;
+    line-height: 5rem;
+}
+.radio{
+    width: 1rem
+}
+.update{
+    background: orange!important;
+    color: white!important;
+}
+
+.resumeItem{
+   border-top: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+    margin-top: -1px;
+}

@@ -1,0 +1,49 @@
+.edit{
+    background:#F7F7FC;
+    min-height:100vh;
+}
+.section{
+    background:white;
+    padding:1rem;
+    margin-bottom:1rem;
+    border-top:1px solid gainsboro;
+    border-bottom:1px solid gainsboro;
+}
+.flex{
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content:left;
+    padding:0.2rem 0;
+}
+.col-50{
+    width:50%;
+}
+.words{
+    width:35%;
+    font-size:14px;
+}
+.progress{
+    width:60%;
+}
+.nav{
+    color:blue;
+    float:right;
+    font-size:12px;
+}
+.title{
+    padding-bottom:0.5rem;
+    border-bottom:1px solid gainsboro;
+}
+.info{
+    font-size:14px;
+    padding:1rem 0 0;
+}
+.noInfo{
+    font-size:14px;
+    color:red;
+    height:2rem;
+    line-height:2rem;
+}
+.infoTitle{
+    font-weight:bold;
+}
