@@ -9,7 +9,7 @@
             </label>
             <label>
                <span> 姓名<span class="tip">*</span>：</span>
-                <input  type="text" name="name" value="{{initData.name}}"/>
+                <input  type="text" name="name" value="{{initData.name}}" />
             </label>
             <label>
                <span> 年龄<span class="tip">*</span>：</span>

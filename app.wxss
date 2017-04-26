@@ -21,6 +21,14 @@
     display:inline-block;
     padding:0 0.5rem;
 }
+.tipContainner{
+    width:100vw;
+    height:100vh;
+    position:fixed;
+    z-index:1000;
+    top:0;
+    left:0;
+}
 .tipmsg{
     width:8rem;
     height:8rem;
@@ -28,7 +36,7 @@
     opacity:0.6;
     color:white;
     position:absolute;
-    z-index:100;
+    z-index:1001;
     top:50%;
     margin-top:-4rem;
     left:50%;

@@ -1,6 +1,8 @@
 <template name="tip">
-    <view class="tipmsg">
-        <!--<view><image src="../../images/loading.png" class="loading"></image></view>-->
-        <view class="msg">{{tip}}</view>
+    <view class="tipContainner">
+        <view class="tipmsg">
+            <!--<view><image src="../../images/loading.png" class="loading"></image></view>-->
+            <view class="msg">{{tip}}</view>
+        </view>
     </view>
 </template>

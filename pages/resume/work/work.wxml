@@ -1,3 +1,4 @@
+<import src="../../../template/tip.wxml" />
 <view>
     <view class="formList">
         <form bindsubmit="formSubmit" class="resume">
@@ -31,7 +32,7 @@
                 </label>
 
                 <view class="textArea">
-                    <view class="textAreaTitle"> 工作描述<span class="tip">*</span>：</view>
+                    <view class="textAreaTitle"> 工作描述：</view>
                     <textarea bindblur="bindTextAreaBlur" auto-height  name="detail" class="posdetail" value="{{ detail }}"/>
                 </view>
             </view>
@@ -41,3 +42,4 @@
         </form>
     </view>
 </view>
+<template is="tip" data="{{tip}}" wx:if="{{tipShow}}"></template>

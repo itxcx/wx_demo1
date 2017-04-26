@@ -59,6 +59,12 @@
     display:inline-block;
     padding:0.2rem 0.5rem;
 }
+.infoTitle .titlesc{
+    width:60%;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
 .confirm{
     padding:0 0 2rem 0;
 }

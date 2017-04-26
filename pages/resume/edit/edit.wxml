@@ -37,7 +37,7 @@
         </view>
         <view class="info" wx:for="{{resume.edu}}" wx:if="{{ resume.edu.length>0 }}">
             <view class="infoTitle">
-                <view>{{item.school}}</view>
+                <view class="titlesc">{{item.school}}</view>
                 <view class="btns">
                     <span bindtap="eduDelete" data-index="{{index}}">删除</span>
                     <span bindtap="eduEdit" data-index="{{ index }}">编辑</span>
@@ -69,7 +69,7 @@
 
         <view class="info" wx:for="{{ resume.exp }}" wx:if="{{ resume.exp.length>0 }}">
             <view class="infoTitle">
-                <view>{{ item.company }}</view>
+                <view class="titlesc">{{ item.company }}</view>
                 <view class="btns">
                     <span bindtap="expDelete" data-index="{{index}}">删除</span>
                     <span bindtap="expEdit" data-index="{{ index }}">编辑</span>
