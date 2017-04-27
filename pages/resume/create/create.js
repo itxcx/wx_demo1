@@ -107,7 +107,7 @@ Page({
                             wx.redirectTo({
                                 url: '../edit/edit?id='+resume.id,
                             });
-                        } else if (res.cancel) {
+                        } else if (res.cancel) {            //ios上可以使用，开发者工具无效
                             wx.redirectTo({
                                 url: '../index/index',
                             });

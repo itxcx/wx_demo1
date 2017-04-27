@@ -38,10 +38,9 @@ Page({
         if (res.confirm) {
             app.request('resume').delete(that.data.resume_id,function(res){
                 app.request('resume').query(function(res){
-                  var resumes=res.items;
-                  that.setData({
-                    resumes:resumes
-                  })
+                    wx.redirectTo({
+                        url: '../index/index'
+                    });
               })
           });
         }
@@ -116,7 +115,7 @@ Page({
   },
 
   radioChange:function(e){
-    // console.log(e)
+      console.log(this.data.resumes)
     this.setData({
       resume_id:e.detail.value
     })
